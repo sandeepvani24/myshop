@@ -9,8 +9,28 @@
         <servlet-class>controller.admin.AdminHomeController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ProductsController</servlet-name>
+        <servlet-name>PRO</servlet-name>
         <servlet-class>controller.admin.ProductsController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CatergoryController</servlet-name>
+        <servlet-class>controller.admin.CatergoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Category</servlet-name>
+        <servlet-class>controller.admin.Category</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoryController</servlet-name>
+        <servlet-class>controller.admin.CategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Cc</servlet-name>
+        <servlet-class>Cc</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>hh</servlet-name>
+        <servlet-class>hh</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
@@ -21,8 +41,28 @@
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ProductsController</servlet-name>
+        <servlet-name>PRO</servlet-name>
         <url-pattern>/admin/products</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CatergoryController</servlet-name>
+        <url-pattern>/CatergoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Category</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryController</servlet-name>
+        <url-pattern>/CategoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cc</servlet-name>
+        <url-pattern>/Cc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>hh</servlet-name>
+        <url-pattern>/hh</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
