@@ -60,12 +60,60 @@ public class ProductsDao {
     }
     
     public int saveProduct(Product product){  
-       return 0;
+        try{  
+            Connection con = DbConnection.getConnection();
+        
+            String query = "INSERT INTO products(product_name,product_image,price,sale_price,category_id,discount) VALUES('"+
+                
+                product.getProductName()+"','"+ 
+                product.getProductImage()
+                +"',"+
+                product.getPrice()
+                +","+
+                product.getSalePrice()
+                +","+
+                product.getCategoryId()
+                +","+
+                product.getDiscount()
+                +")";
+        
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query); 
+        }catch(Exception e){            
+            e.printStackTrace();
+        }
+        return 0;
     }  
     public int updateProduct(Product product){  
+        
+        try{  
+            Connection con = DbConnection.getConnection();
+        
+            String query = "UPDATE products SET "
+                    + "product_name='"+product.getProductName()+"',"
+                    + "product_image='"+product.getProductImage()+"',"
+                    + "price="+ product.getPrice()
+                    +",sale_price="+product.getSalePrice() +","
+                    + "category_id="+product.getCategoryId()+","
+                    + "discount="+product.getDiscount()+" WHERE id="+ product.getId();             
+        
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query); 
+        }catch(Exception e){            
+            e.printStackTrace();
+        }
+        
        return 0;
     }  
     public int deleteProduct(Product product){  
+         try{  
+            Connection con = DbConnection.getConnection();        
+            String query = "DELETE products WHERE id="+ product.getId();
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query); 
+        }catch(Exception e){            
+            e.printStackTrace();
+        }
         return 0;
     }      
 }
