@@ -23,14 +23,16 @@
     <servlet>
         <servlet-name>CategoryController</servlet-name>
         <servlet-class>controller.admin.CategoryController</servlet-class>
+    </servlet>    -
+    
+    
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>controller.admin.UserController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Cc</servlet-name>
-        <servlet-class>Cc</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>hh</servlet-name>
-        <servlet-class>hh</servlet-class>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>controller.admin.Index</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
@@ -56,13 +58,14 @@
         <servlet-name>CategoryController</servlet-name>
         <url-pattern>/CategoryController</url-pattern>
     </servlet-mapping>
+   
     <servlet-mapping>
-        <servlet-name>Cc</servlet-name>
-        <url-pattern>/Cc</url-pattern>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/UserController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>hh</servlet-name>
-        <url-pattern>/hh</url-pattern>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/Index</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

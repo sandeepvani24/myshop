@@ -19,6 +19,11 @@ import model.User;
  * @author Sandeep.vani
  */
 public class UserDao {
+
+    public static List<User> getusers() {
+        return null;
+        
+    }
     
     public List<User> getUsers(){
         

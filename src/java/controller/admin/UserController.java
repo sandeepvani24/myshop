@@ -1,7 +1,7 @@
 
 package controller.admin;
 
-import dao.CategoryDao;
+import dao.UserDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -10,21 +10,22 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
+import model.User;
 
+public class UserController extends HttpServlet {
 
-public class CategoryController extends HttpServlet {
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        CategoryDao productDao = new CategoryDao();
-        List<Category> categories = productDao.getCategory();
+        UserDao productDao = new UserDao();
+        List<User> users = UserDao.getusers();
+       
         
-        request.setAttribute("categories", categories);
+        request.setAttribute("users", users);
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/category.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/users.jsp");
         dispatcher.forward(request, response);
     } 
    
@@ -32,5 +33,7 @@ public class CategoryController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-    }     
+    }
 }
+
+   

@@ -17,7 +17,7 @@ public class CategoryDao {
 
     public List<Category> getCategory() {
         
-         List<Category> category = new ArrayList<>();
+         List<Category> categories = new ArrayList<>();
        
         try{          
             Connection con = DbConnection.getConnection();
@@ -31,19 +31,19 @@ public class CategoryDao {
             
             while(rs.next()){                            
                 
-                Category category = new Category ();
+                Category category = new Category();
 
              category.setId(rs.getInt("id"));
-             category.setCategoryname(rs.getString("category_name"));
-             category.setdescription("category_desc");  
+             category.setName(rs.getString("category_name"));
+             category.setDescription(rs.getString("category_desc"));  
 
-               category.add(category);                
+              categories.add(category);                
             }  
             con.close();
         } catch(Exception e){            
             e.printStackTrace();
         }       
-        return category;
+        return categories;
     }
     
     public int saveCategory(Category category){  

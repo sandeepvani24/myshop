@@ -1,15 +1,12 @@
 <%-- 
-    Document   : category
-    Created on : Apr 29, 2019, 10:37:19 AM
+    Document   : User
+    Created on : May 1, 2019, 8:42:10 AM
     Author     : Isac-Newton
 --%>
-
 <%@page import="java.util.List"%>
-<%@page import="model.Category"%>
+<%@page import="model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-
-
  
 <!DOCTYPE html>
 <html class="no-js" lang="">
@@ -83,27 +80,28 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                
+                                <tbody>
                                     
                                     <%
-                                        List<Category> categories = (List<Category>) request.getAttribute("categories");
+                                        List<User> users = (List<User>) request.getAttribute("users");
+                                          
                                     %>
-                                    
                                     <% 
-                                        for(int i= 0;i < categories.size();i++){ 
-                                            Category category = categories.get(i);
-                                    %> 
+                                        for(int i= 0;i < users.size();i++){ 
+                                            User user = users.get(i);                                              
+                                            
+                                    %>
                                         <tr>
-                                            <td> <%= category.getId() %> </td>
-                                            
-                                            <td><%= category.getName() %></td>
-                                            <td><%= category.getDescription() %> </td>
-                                            
-                                            
+                                            <td> <%= user.getId() %> </td>
+                                            <td><%= user.getFullname() %></td>
+                                            <td><%= user.getEmail() %></td>
+                                            <td><%= user.getPassword() %></td>
+                                            <td><%= user.getPhone() %></td>
+             
                                             <td><button class="btn btn-primary notika-btn-primary waves-effect">Edit </button></td>
                                         </tr>  
                                     <% } %>
-                                
+                                </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Name</th>
@@ -129,3 +127,4 @@
 </body>
 
 </html>
+
