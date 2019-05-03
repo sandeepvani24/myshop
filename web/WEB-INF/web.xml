@@ -13,19 +13,13 @@
         <servlet-class>controller.admin.ProductsController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CatergoryController</servlet-name>
-        <servlet-class>controller.admin.CatergoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Category</servlet-name>
-        <servlet-class>controller.admin.Category</servlet-class>
-    </servlet>
+        <servlet-name>CategoryController</servlet-name>
+        <servlet-class>controller.admin.CategoryController</servlet-class>
+    </servlet>   
     <servlet>
         <servlet-name>CategoryController</servlet-name>
         <servlet-class>controller.admin.CategoryController</servlet-class>
-    </servlet>    -
-    
-    
+    </servlet>   
     <servlet>
         <servlet-name>UserController</servlet-name>
         <servlet-class>controller.admin.UserController</servlet-class>
@@ -33,6 +27,20 @@
     <servlet>
         <servlet-name>Index</servlet-name>
         <servlet-class>controller.admin.Index</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.admin.LoginController</servlet-class>
+    </servlet>
+    
+    
+    <servlet>
+        <servlet-name>DashboardController</servlet-name>
+        <servlet-class>controller.admin.DashboardController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>controller.admin.LogoutController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
@@ -47,13 +55,9 @@
         <url-pattern>/admin/products</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CatergoryController</servlet-name>
-        <url-pattern>/CatergoryController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Category</servlet-name>
-        <url-pattern>/Category</url-pattern>
-    </servlet-mapping>
+        <servlet-name>CategoryController</servlet-name>
+        <url-pattern>/admin/categories</url-pattern>
+    </servlet-mapping>    
     <servlet-mapping>
         <servlet-name>CategoryController</servlet-name>
         <url-pattern>/CategoryController</url-pattern>
@@ -67,9 +71,23 @@
         <servlet-name>Index</servlet-name>
         <url-pattern>/Index</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/admin/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DashboardController</servlet-name>
+        <url-pattern>/admin/dashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/admin/logout</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
-    </session-config>
-</web-app>
+    </session-config>    -
+    
+    
+    </web-app>

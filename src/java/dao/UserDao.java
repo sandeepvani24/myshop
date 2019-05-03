@@ -49,7 +49,7 @@ public class UserDao {
                 user.setFullname(rs.getString("fullname"));
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
-                user.setPhone(rs.getInt("phone"));              
+                user.setPhone(rs.getString("phone"));              
 
                 users.add(user);
                 con.close();
@@ -111,4 +111,24 @@ public class UserDao {
         }
         return 0;
     }      
+
+    public User loginAttempt(String email, String password) {
+        User user = new User();
+        try{  
+            Connection con = DbConnection.getConnection();        
+            String query = "SELECT * FROM users WHERE email='"+ email +"' AND password='" + password + "'";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);            
+            while(rs.next()){
+                user.setId(rs.getInt("id"));
+                user.setFullname(rs.getString("fullname"));
+                user.setEmail(rs.getString("email"));
+                user.setPhone(rs.getString("phone"));
+            }           
+            
+        }catch(Exception e){            
+            e.printStackTrace();
+        }      
+        return user;
+    }
 }

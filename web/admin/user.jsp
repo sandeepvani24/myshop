@@ -1,20 +1,21 @@
 <%-- 
-    Document   : products
-    Created on : Apr 28, 2019, 2:39:12 PM
-    Author     : Mohit
+    Document   : User
+    Created on : May 1, 2019, 8:42:10 AM
+    Author     : Isac-Newton
 --%>
-
 <%@page import="java.util.List"%>
-<%@page import="model.Product"%>
+<%@page import="model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
     <head>
         <%@include file="head.jsp" %>
     </head>
-    <% String activeMenu = "productList"; %> 
+    <% String activeMenu = "userList";
+    %> 
     <body>
         <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -83,30 +84,32 @@
                                     <tbody>
 
                                         <%
-                                            List<Product> products = (List<Product>) request.getAttribute("products");
+                                            List<User> users = (List<User>) request.getAttribute("users");
+
                                         %>
-                                        <%
-                                            for (int i = 0; i < products.size(); i++) {
-                                                Product product = products.get(i);
+                                        <%                                        for (int i = 0; i < users.size(); i++) {
+                                                User user = users.get(i);
+
                                         %>
                                         <tr>
-                                            <td> <%= product.getId()%> </td>
-                                            <td><%= product.getProductName()%></td>
-                                            <td><%= product.getProductImage()%></td>
-                                            <td><%= product.getPrice()%></td>
-                                            <td><%= product.getSalePrice()%></td>
+                                            <td> <%= user.getId()%> </td>
+                                            <td><%= user.getFullname()%></td>
+                                            <td><%= user.getEmail()%></td>
+                                            <td><%= user.getPassword()%></td>
+                                            <td><%= user.getPhone()%></td>
+
                                             <td><button class="btn btn-primary notika-btn-primary waves-effect">Edit </button></td>
                                         </tr>  
                                         <% }%>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Product Id</th>
                                             <th>Name</th>
-                                            <th>Price</th>
-                                            <th>Sale Price</th>
-                                            <th>Discount</th>
-                                            <th>Action</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -124,3 +127,4 @@
     </body>
 
 </html>
+
