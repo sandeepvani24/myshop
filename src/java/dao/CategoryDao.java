@@ -22,7 +22,7 @@ public class CategoryDao {
         try{          
             Connection con = DbConnection.getConnection();
 
-            String query = "Select * From category";
+            String query = "Select * From categories";
 
             Statement stmt = con.createStatement();
 
@@ -33,11 +33,11 @@ public class CategoryDao {
                 
                 Category category = new Category();
 
-             category.setId(rs.getInt("id"));
-             category.setName(rs.getString("category_name"));
-             category.setDescription(rs.getString("category_desc"));  
-
-              categories.add(category);                
+                category.setId(rs.getInt("id"));
+                category.setName(rs.getString("name"));
+                category.setDescription(rs.getString("description"));  
+                category.setImage(rs.getString("image"));
+                categories.add(category);                
             }  
             con.close();
         } catch(Exception e){            

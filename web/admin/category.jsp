@@ -17,7 +17,8 @@
     <head>
         <%@include file="head.jsp" %>
     </head>
-    <% String activeMenu = "categoryList"; %> 
+    <% String activeMenu = "categoryList";
+    %> 
     <body>
         <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -68,21 +69,28 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="data-table-list">
                             <div class="basic-tb-hd">
-                                <h2>Category</h2>
-                                <p>It's just that simple. Turn your simple table into a sophisticated data table and offer your users a nice experience and great features without any effort.</p>
+                                <div class="header" style="width:50%;float:left;">
+                                    <h2>Category</h2>
+                                    <p>Shop owner can add more categories from this modules.</p>
+                                </div>
+                                <div class="header" style="width:50%;float:right;">
+                                    <a href="/MyShop/admin/categories/create"
+                                        <button class="btn btn-info pull-right notika-btn-primary waves-effect">Add Category </button>
+                                    </a>
+                                </div>
                             </div>
+                            <div class="clearfix"></div>
                             <div class="table-responsive">
                                 <table id="data-table-basic" class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th>Category Id</th>
+                                            <th>Image </th>
                                             <th>Name</th>
                                             <th>Descriptions</th>   
                                             <th>Action</th>    
                                         </tr>
                                     </thead>
-
-
                                     <%
                                         List<Category> categories = (List<Category>) request.getAttribute("categories");
                                     %>
@@ -93,11 +101,9 @@
                                     %> 
                                     <tr>
                                         <td> <%= category.getId()%> </td>
-
-                                        <td><%= category.getName()%></td>
-                                        <td><%= category.getDescription()%> </td>
-
-
+                                        <td> <img src="<%= category.getImage()%>" width="80px" height="80px" /> </td>
+                                        <td><%= category.getName() %></td>
+                                        <td><%= category.getDescription() %> </td>
                                         <td><button class="btn btn-primary notika-btn-primary waves-effect">Edit </button></td>
                                     </tr>  
                                     <% }%>

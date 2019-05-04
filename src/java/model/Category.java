@@ -6,6 +6,7 @@ public class Category {
     private Integer id;
     private String name;
     private String description;
+    private String image;
 
     public Integer getId() {
         return id;
@@ -31,5 +32,11 @@ public class Category {
         this.description = description;
     }
 
-       
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }       
 }

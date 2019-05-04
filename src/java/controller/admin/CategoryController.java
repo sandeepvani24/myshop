@@ -19,8 +19,8 @@ public class CategoryController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        CategoryDao productDao = new CategoryDao();
-        List<Category> categories = productDao.getCategory();
+        CategoryDao categoryDao = new CategoryDao();
+        List<Category> categories = categoryDao.getCategory();
         
         request.setAttribute("categories", categories);
         

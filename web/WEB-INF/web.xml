@@ -42,6 +42,10 @@
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>controller.admin.LogoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddCategoryController</servlet-name>
+        <servlet-class>controller.admin.AddCategoryController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/HomeController</url-pattern>
@@ -83,11 +87,20 @@
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/admin/logout</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCategoryController</servlet-name>
+        <url-pattern>/admin/categories/create</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>    -
-    
-    
-    </web-app>
+    <context-param> 
+        <description>Location to store uploaded file</description> 
+        <param-name>file-upload</param-name> 
+        <param-value>
+            C:\Users\Mohit\Documents\NetBeansProjects\MyShop\web\images\category
+        </param-value> 
+    </context-param>
+</web-app>
